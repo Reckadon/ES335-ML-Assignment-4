@@ -1,7 +1,3 @@
-Here's a cleaned-up and formatted version of your analysis for a README file.
-
----
-
 # Model Performance and Analysis
 
 ## Overview
@@ -36,3 +32,27 @@ Yes, the number of epochs for fine-tuning is crucial. Training for too few epoch
 ### 4. **Are There Any Particular Images That the Model is Confused About?**
 
 Yes, there are certain images that the model tend to remain confused about, such as those having only facial structure from the front.
+
+---
+
+## Conclusion
+
+### MLP Model
+The MLP model was effective in capturing the features of the dataset. The number of parameters played a crucial role in determining the model's performance:
+- A high number of nodes increased the complexity, resulting in overfitting (capturing noise).
+- A very low number of nodes failed to utilize the model's potential, leading to underfitting.
+- The best results were achieved by finding a balanced "sweet spot" for the number of nodes, which allowed the model to generalize well without overfitting.
+
+### Image Classification with VGG Models
+All models, except for the unfrozen VGG16, performed well in distinguishing between classes. The unfrozen VGG16 struggled due to its large number of trainable parameters, leading to overfitting and poor generalization. The other models, including VGG1, VGG3, and the augmented versions, were able to capture meaningful features and classify images effectively.
+
+### Prompts for Image Generation
+Here are the prompts used for generating and testing images:
+
+1. **Generate a Kangaroo Image**
+2. **Generate an Arctic Fox Image**
+3. **Generate a Hard-to-Classify Image of a Kangaroo with Respect to an Arctic Fox Using a VGG Model**
+4. **Generate a Hard-to-Classify Image of an Arctic Fox with Respect to a Kangaroo Using a VGG Model**
+
+These prompts were designed to test the model's ability to handle challenging cases where the visual features of the two animals may overlap, making classification more difficult.
+
